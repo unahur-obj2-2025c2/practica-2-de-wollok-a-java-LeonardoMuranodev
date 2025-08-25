@@ -2,7 +2,6 @@ package me.gonzager.ex.operaciones.drones;
 
 import java.util.List;
 
-import me.gonzager.ex.operaciones.Sensor;
 import me.gonzager.ex.operaciones.misiones.InnerMision;
 
 public class DronDeSeguridad extends Dron {

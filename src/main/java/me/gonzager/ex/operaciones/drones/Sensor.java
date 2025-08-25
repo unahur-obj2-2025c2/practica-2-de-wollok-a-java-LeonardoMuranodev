@@ -1,4 +1,4 @@
-package me.gonzager.ex.operaciones;
+package me.gonzager.ex.operaciones.drones;
 
 public class Sensor {
     private final Integer capacidad;
@@ -12,11 +12,7 @@ public class Sensor {
     }
 
     public Integer eficiencia() {
-        if (this.tieneMejorasTecnologicas) {
-            return this.capacidad * 2;
-        } else {
-            return this.capacidad;
-        }
+        return !tieneMejorasTecnologicas ? capacidad : 2 * capacidad;
     }
 
     public Boolean esDuradero() {

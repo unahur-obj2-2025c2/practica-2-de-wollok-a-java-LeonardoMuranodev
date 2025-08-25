@@ -1,8 +1,8 @@
 package me.gonzager.ex.operaciones.drones;
 
 import java.util.List;
+import java.util.stream.IntStream;
 
-import me.gonzager.ex.operaciones.Sensor;
 import me.gonzager.ex.operaciones.misiones.InnerMision;
 
 public abstract class Dron {
@@ -36,9 +36,17 @@ public abstract class Dron {
         return sensores;
     }
 
+    public Integer capacidadOperativa() {
+        return sensores.stream().mapToInt(s -> s.getCapacidad()).sum();
+    }
+
     //Setters
     public void setMisionActual(InnerMision misionActual) {
         this.misionActual = misionActual;
+    }
+
+    public void bajarDosDeAutonomia() {
+        this.autonomia = this.autonomia - 2;
     }
 
     public Integer eficienciaOperativa() {
