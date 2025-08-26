@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Zona {
     private Double tamanio;
-    private Integer cantOperaciones;
+    private Integer cantOperaciones = 0;
 
     public Zona(Double tamanio) {
         this.tamanio = tamanio;

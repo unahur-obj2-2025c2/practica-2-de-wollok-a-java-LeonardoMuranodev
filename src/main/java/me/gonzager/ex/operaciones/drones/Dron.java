@@ -40,6 +40,10 @@ public abstract class Dron {
         return sensores.stream().mapToInt(s -> s.getCapacidad()).sum();
     }
 
+    public Integer getEficienciaSensores() {
+        return this.getSensores().stream().mapToInt(s -> s.eficiencia()).sum();
+    }
+
     //Setters
     public void setMisionActual(InnerMision misionActual) {
         this.misionActual = misionActual;

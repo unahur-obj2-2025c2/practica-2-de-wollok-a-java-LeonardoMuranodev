@@ -12,7 +12,7 @@ public class Sensor {
     }
 
     public Integer eficiencia() {
-        return !tieneMejorasTecnologicas ? capacidad : 2 * capacidad;
+        return !this.getTieneMejorasTecnologicas() ? capacidad : 2 * capacidad;
     }
 
     public Boolean esDuradero() {

@@ -5,7 +5,7 @@ import me.gonzager.ex.operaciones.drones.Dron;
 public class MisionVigilancia implements InnerMision{
     @Override
     public Integer extraEficienciaOperativa(Dron unDron) {
-        return unDron.getSensores().stream().mapToInt(s -> s.eficiencia()).sum();
+        return unDron.getEficienciaSensores();
     }
 
     @Override

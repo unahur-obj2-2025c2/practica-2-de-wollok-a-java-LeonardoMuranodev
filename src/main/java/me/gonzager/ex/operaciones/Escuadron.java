@@ -1,12 +1,17 @@
 package me.gonzager.ex.operaciones;
 
+import java.util.ArrayList;
 import java.util.List;
 import me.gonzager.ex.operaciones.drones.Dron;
 
 public class Escuadron {
-    private List <Dron> drones;
+    private List <Dron> drones = new ArrayList<>();
     
     public Escuadron() {}
+
+    public List<Dron> getDrones() {
+        return drones;
+    }
 
     public Boolean puedeOperarEnZona(Zona unaZona) {
         return this.llevaUnDronAvanzado() && this.superaElDobleDelTamanioDeLaZona(unaZona);
@@ -28,6 +33,8 @@ public class Escuadron {
         if (this.puedeOperarEnZona(unaZona)) {
             this.bajarDosDeAutonomiaADrones();
             unaZona.recibirOperacion();
+        } else {
+            throw new IllegalStateException("El escuadrón no puede operar en esta zona");
         }
     }
 
@@ -36,7 +43,7 @@ public class Escuadron {
     }
 
     public void agregarDron(Dron unDron) {
-        if (drones.size() <= CiudadFuturista.getInstance().getLimiteEscuadron()) {
+        if (drones.size() < CiudadFuturista.getInstance().getLimiteEscuadron()) {
             drones.add(unDron);
         } else {
             throw new IllegalArgumentException("Supera la cantidad máxima de drones");
